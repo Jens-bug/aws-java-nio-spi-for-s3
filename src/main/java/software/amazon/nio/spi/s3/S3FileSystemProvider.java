@@ -159,6 +159,8 @@ public class S3FileSystemProvider extends FileSystemProvider {
         var envMap = (Map<String, Object>) env;
 
         var info = fileSystemInfo(uri);
+        info.setAccessKey(envMap.get("aws.accessKeyId").toString());
+		info.setAccessSecret(envMap.get("aws.secretAccessKey").toString());
         var config = new S3NioSpiConfiguration().withEndpoint(info.endpoint()).withBucketName(info.bucket());
         if (info.accessKey() != null) {
             config.withCredentials(info.accessKey(), info.accessSecret());
