@@ -65,8 +65,16 @@ public class S3FileSystemInfo {
     public String accessKey() {
         return accessKey;
     }
+    
+	public void setAccessKey(String accessKey) {
+		this.accessKey = accessKey;
+	}
 
     public String accessSecret() {
         return accessSecret;
     }
+
+    public void setAccessSecret(String accessSecret) {
+		this.accessSecret = accessSecret;
+	}
 }
